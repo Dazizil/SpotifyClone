@@ -1,0 +1,31 @@
+.myButton {
+    background: rgb(12,13,15);
+    color: white;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.myButtonActive{
+    color: white;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    background: rgb(40,40,40);
+}
+
+.myButton:hover {
+    background: rgb(40,40,40);
+}

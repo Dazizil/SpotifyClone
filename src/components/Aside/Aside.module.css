@@ -1,0 +1,8 @@
+.asideContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 250px;
+    background: rgb(12,13,15);
+
+}
