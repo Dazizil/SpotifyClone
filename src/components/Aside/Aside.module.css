@@ -4,5 +4,10 @@
     height: 100vh;
     width: 250px;
     background: rgb(12,13,15);
+}
 
+@media (max-width: 430px) {
+    .asideContainer{
+        display: none;
+    }
 }

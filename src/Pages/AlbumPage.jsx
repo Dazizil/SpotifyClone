@@ -1,19 +1,16 @@
 import {useLocation} from 'react-router';
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Loader from "../UI/Loader/Loader.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchToken} from "../Slices/authSlice.js";
+import {fetchToken, setError, setLoading} from "../Slices/authSlice.js";
 import TrackList from "../components/TrackList.jsx";
 import Aside from "../components/Aside/Aside.jsx";
+import '/src/AlbumPage.css'
 
 const AlbumPage = () => {
     const { state } = useLocation();
     const album = state?.albumData;
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
     const [albumTracks, setAlbumTracks] = useState([]);
-
     const dispatch = useDispatch();
     const {token} = useSelector((state) => state.auth);
 
@@ -52,8 +49,6 @@ const AlbumPage = () => {
     }, [token]);
 
     if (!album) return <div>Album not found</div>;
-    if (error) return <div>Error: {error.message}</div>;
-    if (loading) return <Loader/>;
 
     return (
         <div className={'Library'}>
@@ -64,7 +59,7 @@ const AlbumPage = () => {
                     <img className={'albumPage-header-img'} src={album.images[0].url} alt="album" />
                 </div>
                     <div className={'albumPage-header-info-container'}>
-                        <div>{album.type}</div>
+                        <div className={'type'}>{album.type}</div>
                         <div className={'albumPage-album-name-font'}>{album.name}</div>
                         <div className={'albumPage-artist-container'}>{album.description}
                         {album.artists.map(artist => (

@@ -6,7 +6,7 @@ const NowPlaying = () => {
     return (
         <div className={'Library'}>
             <Aside/>
-            <h1 style={{color:'white'}}>Это страница NowPlaying</h1>
+            <h1 style={{color:'white'}}>Спотик не разрешает это сделать:(</h1>
         </div>
     );
 };

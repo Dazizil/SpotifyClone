@@ -1,0 +1,103 @@
+.albumPage-header-container{
+    display: flex;
+    color: rgb(255,255,255);
+    width: 100%;
+    height: 270px;
+    background: rgb(12,13,15);
+}
+
+.albumPage-header-img{
+    width: 230px;
+    height: 230px;
+    transition-duration: 0.2s;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 30px;
+}
+
+.albumPage-header-img-container{
+    width: 251px;
+    height: 251px;
+}
+
+.albumPage-header-img:hover{
+    width: 235px;
+    height: 235px;
+    transition-duration: 0.2s;
+}
+
+.albumPage-header-info-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.albumPage-album-name-font{
+    font-weight: 900;
+    font-size: 80px;
+}
+
+.albumPage-artist-container{
+    display: flex;
+    gap: 5px;
+}
+
+.albumPage-track-info{
+    color: rgb(190,190,190);
+}
+
+.albumPage-content-container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-left: 40px;
+}
+
+@media (max-width: 430px) {
+    .albumPage-header-container{
+        flex-direction: column;
+        height: 200px;
+    }
+    .albumPage-header-img-container{
+        width: 121px;
+        height: 121px;
+        align-self: center;
+        margin-bottom: 15px;
+    }
+    .albumPage-header-img{
+        margin-left: 0;
+        margin-top: 0;
+        width: 120px;
+        height: 120px;
+    }
+    .albumPage-header-info-container{
+        margin-top: 20px;
+        gap: 0;
+        margin-left: 0;
+    }
+    .type{
+        display: none;
+    }
+    .albumPage-album-name-font{
+        font-size: 25px;
+        margin-left: 20px;
+        margin-bottom: 7px;
+    }
+    .albumPage-artist-container{
+        margin-left: 20px;
+        font-size: 12px;
+    }
+    .albumPage-header-img:hover{
+        width: 121px;
+        height: 121px;
+        transition-duration: 0.2s;
+    }
+    .albumPage-content-container{
+        padding-left: 20px;
+    }
+}

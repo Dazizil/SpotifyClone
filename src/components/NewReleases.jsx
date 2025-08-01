@@ -3,13 +3,15 @@ import '/src/App.css'
 import axios from "axios";
 import Loader from "../UI/Loader/Loader.jsx";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchToken, setError, setLoading} from "../Slices/authSlice.js";
+import {fetchToken} from "../Slices/authSlice.js";
 import AlbumList from "./AlbumList.jsx";
 
 const NewReleases = (props) => {
     const [albumsData, setAlbumsData] = useState([]);
+    const [loading,setLoading] = useState(false)
+    const [error,setError] = useState(false)
     const dispatch = useDispatch();
-    const { token, loading, error } = useSelector(state => state.auth);
+    const { token} = useSelector(state => state.auth);
 
     useEffect(() => {
         if(!token) dispatch(fetchToken());

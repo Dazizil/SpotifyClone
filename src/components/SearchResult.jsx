@@ -1,18 +1,19 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {SearchContext} from "./SearchContext.jsx";
 import axios from "axios";
-import Loader from "../UI/Loader/Loader.jsx";
 import {NavLink} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchToken, setError, setLoading} from "../Slices/authSlice.js";
+import '/src/Artist.css'
+import '/src/Album.css'
+import '/src/App.css'
 
 const SearchResult = () => {
     const searchValue = useContext(SearchContext);
     const [albumsData, setAlbumsData] = useState([]);
     const [artistsData, setArtistsData] = useState([]);
-
     const dispatch = useDispatch();
-    const {token,loading, error} = useSelector(state => state.auth);
+    const {token} = useSelector(state => state.auth);
 
     useEffect(()=>{
         if(!token){
@@ -71,8 +72,6 @@ const SearchResult = () => {
             searchAlbums();
     }, [token, searchValue]);
 
-    if (error) return <div>Error: {error.message}</div>;
-    if (loading) return <Loader/>;
     if(!searchValue) return <></>
     return (
         <div>
@@ -88,8 +87,8 @@ const SearchResult = () => {
                                 {album.images.length > 0 && (
                                     <img className='album-cover' src={album.images[0].url} alt={album.name} />
                                 )}
-                                <h2>{album.name}</h2>
-                                <p>{album.artists.map(artist => artist.name).join(', ')}</p>
+                                <h2 className={'album-name'}>{album.name}</h2>
+                                <p className={'artist-name'}>{album.artists.map(artist => artist.name).join(', ')}</p>
                             </div>
                         </NavLink>
                     ))
@@ -100,7 +99,7 @@ const SearchResult = () => {
             <div style={{overflowY: 'hidden'}} className={'categories-container'}>
                 {artistsData.length > 0 ? (
                     artistsData.map((artist) => (
-                        <NavLink
+                        <NavLink className={'NavLink'}
                             to="/ArtistPage"
                             state={{ albumData: artist }}
                         >

@@ -22,7 +22,7 @@ const Header = ({ setSearchValue }) => {
                     placeholder='search by title'
                 />
             </form>
-            <NavLink to='/MyProfile'>
+            <NavLink to='/Playlist'>
                 <img src={AccountImage} className='profile-circle'/>
             </NavLink>
         </div>

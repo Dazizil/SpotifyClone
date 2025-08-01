@@ -1,0 +1,84 @@
+.track-number{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    color: rgb(190,190,190);
+}
+.track-item{
+    width: 97%;
+    height: 55px;
+    color: rgb(255,255,255);
+    display: flex;
+}
+
+.track-item:hover{
+    background-color: rgb(40,40,40);
+    transition-duration: 0.2s;
+}
+
+.track-artists{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(150,150,150);
+    width: 50%;
+    margin-right: 700px;
+}
+
+.track-duration{
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    color: rgb(190,190,190);
+}
+
+.track-name{
+    width: fit-content;
+    color: rgb(255,255,255);
+}
+
+
+.artists-container{
+    display: flex;
+    gap: 5px;
+}
+
+.add-to-favourite-button{
+    background: none;
+    border: none;
+    margin-right: 15px;
+}
+
+@media (max-width: 430px) {
+    .track-duration{
+    }
+    .track-name{
+        width: 150px;
+        font-size: 13px;
+    }
+    .track-artists{
+        max-width: 180px;
+        min-width: 180px;
+        margin-right: 70px;
+    }
+    .track-duration{
+        font-size: 14px;
+    }
+    .track-number{
+        font-size: 14px;
+    }
+    .icons{
+        width: 20px;
+    }
+    .albumPage-content-container{
+        padding-left: 20px;
+    }
+    .track-number{
+        display: flex;
+        justify-content: center;
+        min-width: 20px;
+        max-width: 20px;
+        margin-right: 10px;
+    }
+}

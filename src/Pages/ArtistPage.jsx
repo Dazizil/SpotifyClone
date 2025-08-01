@@ -1,25 +1,25 @@
 import React, {useEffect, useState} from 'react';
-import {useLocation, useNavigate} from "react-router";
+import {useLocation} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchToken, setLoading} from "../Slices/authSlice.js";
+import {fetchToken, setError, setLoading} from "../Slices/authSlice.js";
 import axios from "axios";
-import '/src/App.css'
+import '/src/AlbumPage.css'
+import '/src/ArtistPage.css'
 import AlbumList from "../components/AlbumList.jsx";
 import Aside from "../components/Aside/Aside.jsx";
 
 const ArtistPage = () => {
     const {state} = useLocation()
     const artist =state?.albumData
-    const navigate = useNavigate();
+
     const dispatch = useDispatch();
     const [artistAlbums, setArtistAlbums] = useState([]);
-    const {token, error, loading} = useSelector(state => state.auth);
+    const {token} = useSelector(state => state.auth);
 
     useEffect(() => {
         if(!token) dispatch(fetchToken());
 
         setLoading(true);
-
         axios.get(`https://api.spotify.com/v1/artists/${artist.id}/albums`,
             {
             headers: {
@@ -30,12 +30,13 @@ const ArtistPage = () => {
             }
         })
             .then((res) => {
+
                 setArtistAlbums(res.data.items);
         }) .catch((error)=>{
-            console.log(error)
+            setError(error)
+            console.log(error.message)
         }).finally(setLoading(false));
-    })
-
+    },[token])
 
 
     return (
@@ -51,7 +52,7 @@ const ArtistPage = () => {
                 </div>
             </div>
             <span className={'section-naming'}>Albums</span>
-            <AlbumList albums={artistAlbums} dispatch={dispatch} />
+            <AlbumList albums={artistAlbums}  />
         </div>
             </div>
     );

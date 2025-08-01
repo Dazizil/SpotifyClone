@@ -6,7 +6,7 @@ import {NavLink} from "react-router";
 
 const Categories = () => {
     const [categoriesData, setCategoriesData] = useState([]);
-    const { token, loading, error } = useSelector(state => state.auth);
+    const { token} = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -41,7 +41,7 @@ const Categories = () => {
                 <span className={'section-naming'}>Categories</span>
     <div className={'categories-container'}>
             {categoriesData.map((album) => (
-                <NavLink style={{height:'300px'}}
+                <NavLink className={'NavLink'}
                     to="/CategoryPage"
                     state={{ albumData: album }}
                 >
@@ -49,7 +49,7 @@ const Categories = () => {
                         {album.icons.length > 0 && (
                             <img className='album-cover' src={album.icons[0].url} alt={album.name} />
                         )}
-                        <h2>{album.name}</h2>
+                        <h2 className={'album-name'}>{album.name}</h2>
                     </div>
                 </NavLink>
             ))}

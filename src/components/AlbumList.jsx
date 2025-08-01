@@ -1,11 +1,14 @@
 import React from 'react';
 import {NavLink} from "react-router";
+import '/src/App.css'
+import '/src/Album.css'
+import '/src/Category.css'
 
 const AlbumList = (props) => {
     return (
         <div className='categories-container'>
             {props.albums.map((album) => (
-                <NavLink style={{height:'300px'}}
+                <NavLink className={'NavLink'}
                     to="/AlbumPage"
                     state={{ albumData: album }}
                 >
@@ -13,8 +16,8 @@ const AlbumList = (props) => {
                         {album.images.length > 0 && (
                             <img className='album-cover' src={album.images[0].url} alt={album.name} />
                         )}
-                        <h2>{album.name}</h2>
-                        <p>{album.artists.map(artist => artist.name).join(', ')}</p>
+                        <h2 className={'album-name'}>{album.name}</h2>
+                        <p className={'artist-name'}>{album.artists.map(artist => artist.name).join(', ')}</p>
                     </div>
                 </NavLink>
             ))}

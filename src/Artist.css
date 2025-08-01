@@ -1,0 +1,40 @@
+.artist-info{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    height: 270px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: rgb(250,250,250);
+}
+
+.artist-info:hover{
+    transition-duration: 0.2s;
+    background-color:rgb(40,40,40);
+    border-radius: 10px ;
+}
+
+.artist-cover{
+    height: 200px;
+    width: 200px;
+    border-radius: 50% ;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+@media (max-width: 430px) {
+    .artist-info{
+        width: 150px;
+        height: 180px;
+        margin-left: 25px;
+        font-size: 9px;
+    }
+    .artist-cover{
+        height: 130px;
+        width: 130px;
+    }
+}

@@ -3,15 +3,16 @@ import {toggleTrack} from "../Slices/likedTracksSlice.js";
 import {useDispatch, useSelector} from "react-redux";
 import CheckIcon from '../assets/svg/CheckIcon.svg'
 import PlusIcon from '../assets/svg/PlusIcon.svg'
+import '/src/TrackList.css'
 
 const TrackList = (props) => {
     const { tracks: likedTracks } = useSelector(state => state.likedTracks);
-    const dispatch = useDispatch(); // ✅ Получаем dispatch
+    const dispatch = useDispatch();
 
     return (
         <div className={'albumPage-content-container'}>
             {props.tracks.map((track, index) => {
-                const isLiked = likedTracks.some(t => t.id === track.id); // ✅ Используем some
+                const isLiked = likedTracks.some(t => t.id === track.id);
 
                 return (
                     <div key={track.id} className="track-item">
@@ -35,12 +36,12 @@ const TrackList = (props) => {
 
                         <button
                             className={'add-to-favourite-button'}
-                            onClick={() => dispatch(toggleTrack(track))} // ✅ Вызываем dispatch
+                            onClick={() => dispatch(toggleTrack(track))}
                         >
                             {isLiked ?
-                                <img src={CheckIcon}/>
+                                <img className={'icons'} src={CheckIcon}/>
                                 :
-                                <img src={PlusIcon}/>
+                                <img className={'icons'}  src={PlusIcon}/>
                             }
                         </button>
 

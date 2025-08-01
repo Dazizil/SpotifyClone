@@ -6,3 +6,9 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media (max-width: 430px) {
+    .headerContainer{
+        justify-content: center;
+    }
+}
