@@ -74,7 +74,7 @@
 @media (max-width: 430px) {
     .modal-container{
         width: 90%;
-        height: 45%;
+        height: 50%;
     }
     .modal-big-text{
         margin-top: 50px;
@@ -107,4 +107,17 @@
         font-family: SpotifyMix-Black;
         font-size: 40px;
     }
+}
+
+@media (max-height: 670px) {
+    .modal-container{
+        width: 89%;
+    }
+    .modal-button{
+        height: 80px;
+    }
+    .modal-small-text{
+        margin-top: 25px;
+    }
+    
 }
