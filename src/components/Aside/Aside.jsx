@@ -6,17 +6,17 @@ import classes from "./Aside.module.css";
 const Aside = () => {
     return (
             <div className={classes.asideContainer}>
-                <NavLink to='/NowPlaying'>
+                <NavLink style={{textDecoration:'none'}} to='/NowPlaying'>
                     {({ isActive }) => (
                         <MyButton active={isActive}>Now playing</MyButton>
                     )}
                 </NavLink>
-                <NavLink to='/Home'>
+                <NavLink style={{textDecoration:'none'}} to='/Home'>
                     {({ isActive }) => (
                         <MyButton active={isActive}>Home</MyButton>
                     )}
                 </NavLink>
-                <NavLink to='/Playlist'>
+                <NavLink style={{textDecoration:'none'}} to='/Playlist'>
                     {({ isActive }) => (
                         <MyButton active={isActive}>My Playlist</MyButton>
                     )}

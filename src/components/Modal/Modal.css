@@ -1,0 +1,110 @@
+.main-modal-container{
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container{
+    width: 800px;
+    height: 600px;
+    background: rgb(138,245,212);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-big-text{
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: SpotifyMix-Ultra;
+    font-size: 40px;
+}
+
+.modal-small-text{
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: SpotifyMix-Medium;
+    font-size: 20px;
+}
+
+.modal-text-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 70%;
+}
+.modal-button-container{
+    display: flex;
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+}
+.modal-button{
+    background-color: var(--background-color);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    width: 400px;
+    height: 120px;
+    font-family: SpotifyMix-Black;
+    font-size: 40px;
+}
+
+.modal-button:hover{
+    background-color: rgb(138,245,212) ;
+    border: 5px solid var(--background-color);
+    color:var(--background-color);
+    transition-duration: 0.2s;
+}
+
+.modal-hided{
+    display: none;
+}
+
+@media (max-width: 430px) {
+    .modal-container{
+        width: 90%;
+        height: 45%;
+    }
+    .modal-big-text{
+        margin-top: 50px;
+        font-size: 23px;
+    }
+    .modal-small-text{
+        margin-top: 40px;
+        font-size: 17px;
+    }
+
+    .modal-text-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 70%;
+    }
+    .modal-button-container{
+        display: flex;
+        height: 30%;
+        width: 100%;
+        justify-content: center;
+    }
+    .modal-button{
+        background-color: var(--background-color);
+        color: white;
+        border: none;
+        border-radius: 40px;
+        width: 280px;
+        height: 90px;
+        font-family: SpotifyMix-Black;
+        font-size: 40px;
+    }
+}

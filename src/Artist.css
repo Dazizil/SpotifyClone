@@ -1,4 +1,6 @@
 .artist-info{
+    font-family: SpotifyMix-Thin;
+    font-weight: 100;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
@@ -28,9 +30,8 @@
 
 @media (max-width: 430px) {
     .artist-info{
-        width: 150px;
-        height: 180px;
-        margin-left: 25px;
+        width: 160px;
+        height: 190px;
         font-size: 9px;
     }
     .artist-cover{

@@ -10,12 +10,15 @@ import Header from "./components/Header/Header.jsx";
 import CategoryPage from "./Pages/CategoryPage.jsx";
 import Player from "./components/Player/Player.jsx";
 import MyProfile from "./Pages/MyProfile.jsx";
+import Modal from "../src/components/Modal/Modal.jsx"
+
 
 function App() {
     const [searchValue, setSearchValue] = useState('');
     const location = useLocation();
     return (
         <SearchContext.Provider value={searchValue}>
+            <Modal/>
                 <Header setSearchValue={setSearchValue}/>
             <Player/>
                 <Routes>

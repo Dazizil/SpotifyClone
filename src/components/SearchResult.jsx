@@ -3,10 +3,11 @@ import {SearchContext} from "./SearchContext.jsx";
 import axios from "axios";
 import {NavLink} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchToken, setError, setLoading} from "../Slices/authSlice.js";
+import {fetchToken, setError} from "../Slices/authSlice.js";
 import '/src/Artist.css'
 import '/src/Album.css'
 import '/src/App.css'
+import Loader from '/src/UI/Loader/Loader.jsx'
 
 const SearchResult = () => {
     const searchValue = useContext(SearchContext);
@@ -14,7 +15,7 @@ const SearchResult = () => {
     const [artistsData, setArtistsData] = useState([]);
     const dispatch = useDispatch();
     const {token} = useSelector(state => state.auth);
-
+    const [loading,setLoading] = useState(false)
     useEffect(()=>{
         if(!token){
             dispatch(fetchToken())
@@ -73,12 +74,13 @@ const SearchResult = () => {
     }, [token, searchValue]);
 
     if(!searchValue) return <></>
+    if(loading) return <Loader/>
     return (
         <div>
             <span className={'section-naming'}>Albums</span>
             <div style={{overflowY: 'hidden'}} className={'categories-container'}>
                 {albumsData.map((album) => (
-                        <NavLink
+                        <NavLink className={'NavLink'}
                             to="/AlbumPage"
                             state={{ albumData: album }}
                         >

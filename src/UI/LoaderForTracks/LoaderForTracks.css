@@ -1,0 +1,201 @@
+.mop-number{
+    border-radius: 5px;
+    padding-left: 15px;
+    width: 10px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    background: gray;
+}
+.mop-item{
+    border-radius: 5px;
+    width: 97%;
+    height: 55px;
+    display: flex;
+}
+
+.track-item:hover{
+    background-color: rgb(40,40,40);
+    transition-duration: 0.2s;
+}
+
+.mop-artists{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50px;
+    margin-right: 700px;
+}
+
+.mop-track-duration{
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 20px;
+    background: gray;
+    border-radius: 5px;
+}
+.mop-track{
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 20px;
+    width: 300px;
+    background: gray;
+}
+
+.mop-artist{
+    border-radius: 5px;
+    height: 15px;
+    width: 70px;
+    background: gray;
+}
+
+.mop-button{
+    background: gray;
+    margin-right: 15px;
+    width: 30px;
+    height: 23px;
+    border-radius: 50%;
+}
+
+
+.mop-albumPage-header-container{
+    display: flex;
+    width: 100%;
+    height: 270px;
+    background: var(--background-color);
+}
+
+.mop-albumPage-header-img{
+    width: 230px;
+    height: 230px;
+    transition-duration: 0.2s;
+    margin-left: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 30px;
+}
+
+.mop-albumPage-header-img-container{
+    border-radius: 10px;
+    background: gray;
+    width: 230px;
+    height: 230px;
+}
+
+.map-albumPage-header-img:hover{
+    width: 235px;
+    height: 235px;
+    transition-duration: 0.2s;
+}
+
+.mop-albumPage-header-info-container{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-left: 40px;
+}
+
+.mop-albumPage-album-name-font{
+    background: gray;
+    width: 500px;
+    height: 100px;
+}
+
+.mop-albumPage-artist-container{
+    display: flex;
+    gap: 5px;
+}
+
+.mop-albumPage-track-info{
+    width: 70px;
+    height: 15px;
+    background: gray;
+}
+
+.mop-albumPage-content-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 30px;
+    padding-left: 25px;
+}
+.mop-type{
+    width: 70px;
+    height: 20px;
+    background: gray;
+}
+@media (max-width: 430px) {
+    .mop-duration{
+    }
+    .mop-track{
+        width: 150px;
+        font-size: 13px;
+    }
+    .mop-artists{
+        max-width: 180px;
+        min-width: 180px;
+        margin-right: 70px;
+    }
+    .mop-button{
+        width: 30px;
+        height: 18px;
+
+    }
+    .mop-number{
+        display: flex;
+        justify-content: center;
+        min-width: 7px;
+        max-width: 7px;
+        margin-right: 10px;
+    }
+
+    .mop-albumPage-header-container{
+        flex-direction: column;
+        height: 200px;
+    }
+    .mop-albumPage-header-img-container{
+        width: 121px;
+        height: 121px;
+        align-self: center;
+        margin-bottom: 15px;
+    }
+    .mop-albumPage-header-img{
+        margin-left: 0;
+        margin-top: 0;
+        width: 120px;
+        height: 120px;
+    }
+    .mop-albumPage-header-info-container{
+        margin-top: 20px;
+        gap: 0;
+        margin-left: 0;
+    }
+    .mop-type{
+        display: none;
+    }
+    .mop-albumPage-album-name-font{
+        width: 100px;
+        height: 30px;
+        margin-left: 20px;
+        margin-bottom: 7px;
+    }
+    .mop-albumPage-artist-container{
+        margin-left: 20px;
+        font-size: 12px;
+    }
+    .mop-albumPage-header-img:hover{
+        width: 121px;
+        height: 121px;
+        transition-duration: 0.2s;
+    }
+    .mop-albumPage-content-container{
+        padding-left: 20px;
+    }
+}

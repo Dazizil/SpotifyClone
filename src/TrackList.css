@@ -1,10 +1,13 @@
 .track-number{
+    padding-left: 15px;
+    font-family: SpotifyMix-Light;
     display: flex;
     align-items: center;
     margin-right: 20px;
     color: rgb(190,190,190);
 }
 .track-item{
+    border-radius: 5px;
     width: 97%;
     height: 55px;
     color: rgb(255,255,255);
@@ -17,6 +20,8 @@
 }
 
 .track-artists{
+    font-family: SpotifyMix-Light;
+    font-weight: 900;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -26,6 +31,7 @@
 }
 
 .track-duration{
+    font-family: SpotifyMix-Light;
     margin-right: 40px;
     display: flex;
     align-items: center;
@@ -40,6 +46,7 @@
 
 
 .artists-container{
+    font-family: SpotifyMix-Light;
     display: flex;
     gap: 5px;
 }

@@ -1,20 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {fetchToken, setError, setLoading} from "../Slices/authSlice.js";
+import {fetchToken, setError} from "../Slices/authSlice.js";
 import axios from "axios";
 import {NavLink} from "react-router";
+import Loader from '/src/UI/Loader/Loader.jsx'
 
 const Categories = () => {
     const [categoriesData, setCategoriesData] = useState([]);
     const { token} = useSelector(state => state.auth);
     const dispatch = useDispatch();
-
+    const [loading,setLoading] = useState(false)
     useEffect(() => {
         if (!token) return;
 
         const getCategories = async () => {
             try {
-                dispatch(setLoading(true));
+                setLoading(true)
                 const response = await axios.get(`https://api.spotify.com/v1/browse/categories`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -31,11 +32,12 @@ const Categories = () => {
                     dispatch(setError(err.message));
                 }
             } finally {
-                dispatch(setLoading(false));
+                setLoading(false);
             }
         };
         getCategories();
     }, [token, dispatch]);
+    if(loading) return <Loader/>
     return (
         <div style={{height:'fit-content'}}>
                 <span className={'section-naming'}>Categories</span>

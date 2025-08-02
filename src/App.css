@@ -1,17 +1,62 @@
+@font-face {
+  font-family: 'SpotifyMix-Black';
+  src: url("./fonts/spotify-font/SpotifyMix-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'SpotifyMix-Extrabold';
+  src: url("./fonts/spotify-font/SpotifyMix-Extrabold.woff2" )format("woff2");
+}
+
+@font-face {
+  font-family: 'SpotifyMix-Bold';
+  src: url("./fonts/spotify-font/SpotifyMix-Bold.woff2" )format("woff2");
+}
+
+@font-face {
+  font-family: 'SpotifyMix-Light';
+  src: url("./fonts/spotify-font/SpotifyMix-Light.woff2" )format("woff2");
+}
+
+@font-face {
+  font-family: 'SpotifyMix-Medium';
+  src: url("./fonts/spotify-font/SpotifyMix-Medium.woff2" )format("woff2");
+}
+
+@font-face {
+  font-family: 'SpotifyMix-Regular';
+  src: url("./fonts/spotify-font/SpotifyMix-Regular.woff2" )format("woff2");
+}
+
+@font-face {
+  font-family: 'SpotifyMix-Thin';
+  src: url("./fonts/spotify-font/SpotifyMix-Thin.woff2" )format("woff2");
+}
+
+@font-face {
+  font-family: 'SpotifyMix-Ultra';
+  src: url("./fonts/spotify-font/SpotifyMix-Ultra.woff2" )format("woff2");
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root{
+  --background-color:rgb(12,13,15);
+}
+
 #root{
   height: 100%;
   width: 100%;
-  background: rgb(12,13,15);
+  background: var(--background-color);
 }
 
+
 body{
-  background: rgb(12,13,15);
+  background: var(--background-color);
   overflow: hidden;
 
 }
@@ -32,5 +77,14 @@ body{
   color: white;
   font-size: 30px;
   margin-left: 20px;
+  font-family: SpotifyMix-Bold;
+  font-weight: 100;
 }
+
+ @media (max-width: 430px) {
+   .section-naming{
+     display: flex;
+     justify-content: center;
+   }
+ }
 

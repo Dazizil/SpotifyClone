@@ -16,3 +16,12 @@
 .player{
     width: 500px;
 }
+
+@media (max-width: 430px) {
+    .player{
+        display: none;
+    }
+    .playerContainer{
+        display: none;
+    }
+}
