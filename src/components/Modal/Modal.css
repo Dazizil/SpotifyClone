@@ -67,9 +67,6 @@
     transition-duration: 0.2s;
 }
 
-.modal-hided{
-    display: none;
-}
 
 @media (max-width: 430px) {
     .modal-container{
@@ -107,6 +104,33 @@
         font-family: SpotifyMix-Black;
         font-size: 40px;
     }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    99% {
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.modal-hided {
+    background: rgba(0,0,0,0.7);
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    animation: fade-out 0.5s ease forwards;
+    pointer-events: none; 
 }
 
 @media (max-height: 670px) {
